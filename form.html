@@ -1,0 +1,154 @@
+<html>
+    <head>
+          <title>this is contact us page</title>
+		  
+          <script>
+		  
+		  function validation(formObj)
+		  {
+			  var username = formObj.username.value;
+			  //console.log(username);
+			  var email = formObj.email.value;
+			  var contact = formObj.contact.value;  
+			  var subject = formObj.subject.value;  
+			  var comment = formObj.comment.value;
+			  console.log(comment);
+			  var flag = 0;
+			  
+			  if ( username == "" ) {
+				document.getElementById("error_username").innerHTML="please enter user name ";
+				flag++;
+			 
+			  }else {
+				document.getElementById("error_username").innerHTML="";
+			  }
+			  
+			 if ( email == "" ) {
+			  document.getElementById("error_email").innerHTML="please enter email id ";
+			  flag++;
+			 
+			  }else if (email.indexOf("@")<0 ) {
+			  document.getElementById("error_email").innerHTML="please enter valid email id";
+			  flag++;
+			  }
+			  
+			  if ( contact == "" ) {
+			  document.getElementById("error_contact").innerHTML="please enter number ";
+			  flag++;
+			 
+			  }else if (isNaN(contact)) {
+			  document.getElementById("error_contact").innerHTML="please enter digit only";
+			  flag++;
+			  
+			  }else if (contact.length != 10) {
+			  document.getElementById("error_contact").innerHTML="please enter 10digit mobile number only";
+			  flag++;
+			  }else {
+			  document.getElementById("error_contact").innerHTML="";
+			  }
+			  
+			  if ( subject == "" ) {
+			  document.getElementById("error_subject").innerHTML="please enter subject name ";
+			  flag++;
+			 
+			  }else {
+			  document.getElementById("error_username").innerHTML="";
+			  }
+			  console.log(comment);
+			  if(comment.trim() == '' ) {
+			   console.log('inside comment if');
+				document.getElementById("error_comment").innerHTML=" Required ";
+				flag++;
+			 
+			  }else {
+				document.getElementById("error_comment").innerHTML="";
+			  }
+			
+			  if(flag == 0) {
+				return true;
+			  }
+			  return false;
+          }
+		  
+		  </script>
+    </head> 
+     <body >
+	 
+	      <table border="1" width="800" height="1000" align="center">
+		  		
+
+				<tr>
+				   <td>
+				       <table border="1" height="100%" width="100%">
+				         <tr>
+						   <td width="75%">
+	                    <div class="regform" style="text-align:center";><h1><b>Registration Form</b></h1></div>
+                          
+						   <form onsubmit="return validation(this)" action="contact.html">
+						      <table>
+							      <tr>
+
+								     <td>UserName</td>
+								     <td><input id="uname" type="text" name="username" />
+									 <span id ="error_username" style="color: red" ></span>
+									 </td>
+								   
+								  </tr>
+							   
+								    <tr>
+								  
+								       <td>Email </td>
+								        <td><input id="email" type="text" name="email" />
+										<span id ="error_email" style="color: red" ></span>
+										</td>
+								   
+								  </tr>
+								   <tr>
+								  
+								     <td>Contact Number</td>
+								     <td><input id="cname" type="text" name="contact" />
+									 <span id ="error_contact" style="color: red" ></span>
+									 </td>
+								   
+								  </tr>
+								   <tr>
+								  
+								     <td>Subject</td>
+								     <td><input type="text" name="subject" />
+									  <span id ="error_subject" style="color: red" ></span>
+									 </td>
+								   
+								  </tr>
+							     
+							   <tr>
+								  
+								     <td>Comment</td>
+								     <td>
+									  <textarea cols-"80" rows="6" name="comment"> </textarea>
+									 <span id ="error_comment" style="color: red" ></span>
+									 </td>
+								   
+								  </tr>
+								     
+							      
+
+
+									<tr>
+								  
+								       <td> </td>
+								        <td>
+										   <input type="submit" name="submit" value="submit" /> 
+										    
+										</td>
+								   
+								    </tr>
+							 </table>
+							</form> 
+						   
+						 
+		   </table>
+		   
+	 </body>
+
+
+</html> 
